@@ -1,0 +1,32 @@
+{
+  "name": "transcriberdisplay",
+  "private": true,
+  "version": "0.0.3",
+  "type": "module",
+  "config": {
+    "imageName": "registry.gitlab.com/uwa-managed/transcribe-display-tool"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "docker:build": "cross-env-shell DOCKER_BUILDKIT=1 docker build -t $npm_package_config_imageName:$npm_package_version .",
+    "docker:push": "cross-env-shell docker push $npm_package_config_imageName:$npm_package_version",
+    "docker:deploy": "npm run docker:build && npm run docker:push"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.6.1",
+    "csvtojson": "^2.0.10",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.1.7",
+    "primevue": "^3.40.1",
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vue-tsc": "^1.8.22"
+  }
+}
