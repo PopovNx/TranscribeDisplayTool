@@ -3,9 +3,6 @@
   "private": true,
   "version": "0.0.3",
   "type": "module",
-  "config": {
-    "imageName": "registry.gitlab.com/uwa-managed/transcribe-display-tool"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
